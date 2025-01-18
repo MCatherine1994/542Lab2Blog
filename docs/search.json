@@ -1,0 +1,79 @@
+[
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "posts/welcome/index.html",
+    "href": "posts/welcome/index.html",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "",
+    "text": "Did you know that student dropout rates remain a persistent challenge in higher education worldwide? Each dropout represents not just an academic setback but also a strain on institutional resources and a missed opportunity for personal and professional growth. The question is, can we do better? What if we could use technology to identify at-risk students early and provide them with the support they need to succeed?\nMachine learning offers a promising solution. By analyzing patterns in academic and demographic data, machine learning models can predict whether students are likely to drop out, stay enrolled, or graduate. In this blog, we’ll explore how machine learning—specifically the k-Nearest Neighbors (k-NN) algorithm—can be applied to address this challenge. Using a dataset from UC Irvine’s Machine Learning Repository, we built a model that achieved moderate success in identifying at-risk students. Let’s dive into how it works and what we learned."
+  },
+  {
+    "objectID": "posts/welcome/index.html#introduction",
+    "href": "posts/welcome/index.html#introduction",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "",
+    "text": "Did you know that student dropout rates remain a persistent challenge in higher education worldwide? Each dropout represents not just an academic setback but also a strain on institutional resources and a missed opportunity for personal and professional growth. The question is, can we do better? What if we could use technology to identify at-risk students early and provide them with the support they need to succeed?\nMachine learning offers a promising solution. By analyzing patterns in academic and demographic data, machine learning models can predict whether students are likely to drop out, stay enrolled, or graduate. In this blog, we’ll explore how machine learning—specifically the k-Nearest Neighbors (k-NN) algorithm—can be applied to address this challenge. Using a dataset from UC Irvine’s Machine Learning Repository, we built a model that achieved moderate success in identifying at-risk students. Let’s dive into how it works and what we learned."
+  },
+  {
+    "objectID": "posts/welcome/index.html#the-challenge-understanding-academic-dropouts",
+    "href": "posts/welcome/index.html#the-challenge-understanding-academic-dropouts",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "The Challenge: Understanding Academic Dropouts",
+    "text": "The Challenge: Understanding Academic Dropouts\nDropping out of college is not just a personal setback for students; it’s a systemic issue with far-reaching consequences. Students who drop out may face limited career opportunities and financial strain, while institutions lose tuition revenue and bear the costs of addressing retention problems.\nIdentifying at-risk students is a complex challenge. Many factors contribute to academic success or failure, including personal, academic, and socio-economic variables. While schools collect a wealth of data, the challenge lies in making sense of it. This is where machine learning steps in: it’s capable of uncovering patterns and relationships that might otherwise go unnoticed."
+  },
+  {
+    "objectID": "posts/welcome/index.html#the-dataset-and-its-role",
+    "href": "posts/welcome/index.html#the-dataset-and-its-role",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "The Dataset and Its Role",
+    "text": "The Dataset and Its Role\nTo tackle this problem, we used a publicly available dataset from UC Irvine’s Machine Learning Repository, which is created by Mónica Vieira Martins, Jorge Machado, Luís Baptista and Valentim Realinho at the Instituto Politécnico de Portalegre Realinho et al. (2022). This dataset includes demographic, enrollment, and academic information about undergraduate students. Key features include:\n\nDemographics: Age, residence type, parental education levels.\nAcademic Records: GPA, number of courses completed, and absences.\n\nTo ensure fairness, we excluded sensitive features like gender and nationality, which could introduce bias into our model. Additionally, all numeric features were standardized to ensure consistent model performance.\nThink of the dataset as a detailed report card combined with background information, offering a holistic view of each student. This richness enabled our model to make informed predictions about their academic trajectory."
+  },
+  {
+    "objectID": "posts/welcome/index.html#the-process-how-machine-learning-works",
+    "href": "posts/welcome/index.html#the-process-how-machine-learning-works",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "The Process: How Machine Learning Works",
+    "text": "The Process: How Machine Learning Works\nThe Python programming language Python (2021) and the following Python packages were used to perform the analysis: Pandas McKinney et al. (2011), Scikit-learn Kramer and Kramer (2016), Pandera Bantilan (2020) and Altair VanderPlas et al. (2018). To predict student outcomes, we used the k-Nearest Neighbors (k-NN) algorithm for this project to build a classification model. Here’s how it works, in simple terms:\nImagine a student’s academic record as a dot on a graph. k-NN looks at the student’s “neighbors”—other dots closest to them—to predict their outcome. For example, if most of a student’s closest neighbors dropped out, the model predicts that they are likely to drop out too.\nHere’s how we approached the problem:\n\nData Preprocessing: We standardized all numeric features, excluded biased or irrelevant ones like gender and nationality, and ensured fairness in the dataset. Data was split with 80% being partitioned into the training set and 20% being partitioned into the test set.\nTraining the Model: Using k-NN, we tested different values of “k” (the number of neighbors considered) to determine the most accurate configuration.\nHyperparameter Tuning: To enhance accuracy, we used RandomizedSearchCV to fine-tune the hyperparameters. The hyperparameter K was chosen using 5-fold cross validation. The optimal value for k was determined to be 17.\n\nAfter fine-tuning, our final model achieved a consistent accuracy score of 72% on both training and test data. This means the model was fairly reliable in predicting outcomes across different datasets."
+  },
+  {
+    "objectID": "posts/welcome/index.html#key-insights",
+    "href": "posts/welcome/index.html#key-insights",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "Key Insights",
+    "text": "Key Insights\nFrom table 1, the analysis highlighted that the model could accurately predict 68% of student dropouts—a promising baseline for intervention strategies.\n\nWith an overall accuracy of 72%, the model offers actionable insights for identifying at-risk students. However, the exclusion of socio-economic data, such as unemployment rates and GDP, limited the scope of predictions. For example, let’s consider two students with similar academic records but different socio-economic backgrounds. Including socio-economic data could reveal why one student thrives while the other struggles, offering more targeted solutions."
+  },
+  {
+    "objectID": "posts/welcome/index.html#opportunities-for-improvement",
+    "href": "posts/welcome/index.html#opportunities-for-improvement",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "Opportunities for Improvement",
+    "text": "Opportunities for Improvement\nOur model offers promising results, but there are key ways to enhance its effectiveness:\n\nTailored Models for Individual Schools: While our dataset was generalized, focusing data collection on individual institutions could yield more precise predictions. Each school has unique academic environments, support systems, and challenges. By training models specific to each school, institutions could achieve more actionable and relevant insights for their student populations.\nExpanding the Dataset: Including data from diverse institutions and regions would increase the model’s generalizability, allowing it to cater to broader educational contexts.\nIntegrating Socio-Economic Factors: Adding variables like family income, parental employment, or local economic indicators could offer deeper insights into factors influencing student outcomes. These data points can highlight external challenges and provide schools with direction for targeted interventions.\nEthical and Practical Implementation: Ensuring fairness and preventing biases in predictions is crucial. Predictions should guide proactive support strategies and not stigmatize students. Furthermore, transparency about how data is collected and used will build trust among stakeholders.\nIterative Feedback Systems: Schools could continuously refine their models by incorporating new data and learning from intervention outcomes, creating a dynamic and adaptive system for student support.\n\nBy adopting these improvements, we can move closer to creating personalized, fair, and impactful solutions for tackling student dropout rates."
+  },
+  {
+    "objectID": "posts/welcome/index.html#why-this-matters-the-bigger-picture",
+    "href": "posts/welcome/index.html#why-this-matters-the-bigger-picture",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "Why This Matters: The Bigger Picture",
+    "text": "Why This Matters: The Bigger Picture\nThis project highlights the transformative potential of machine learning in education. By identifying at-risk students early, schools can allocate resources more effectively—whether it’s academic counseling, financial aid, or mentorship programs.\nImagine a future where every school has a data-driven system to support students proactively. By combining academic and socio-economic data, institutions can develop robust tools to reduce dropout rates and empower students to achieve their goals. This is not just about technology; it’s about creating a more equitable and supportive education system."
+  },
+  {
+    "objectID": "posts/welcome/index.html#conclusion",
+    "href": "posts/welcome/index.html#conclusion",
+    "title": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone",
+    "section": "Conclusion",
+    "text": "Conclusion\nPredicting academic success using machine learning is more than a technical exercise; it’s a step toward improving lives and strengthening communities. While our model is a work in progress, it offers a glimpse into what’s possible when data meets compassion.\nWhat do you think? Could this approach work in your community? Let us know in the comments, and stay tuned for more updates as we refine our model and expand our dataset."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Blog",
+    "section": "",
+    "text": "How Machine Learning Predicts Academic Success: A Deep Dive for Everyone\n\n\n\n\n\n\nExplanations\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\nCatherine Meng\n\n\n\n\n\n\nNo matching items"
+  }
+]
